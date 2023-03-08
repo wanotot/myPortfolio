@@ -7,13 +7,16 @@
           elevation="0"
         >
           <v-list>
-            <v-list-subheader>
-              WANOTO OTASHIRO
+            <v-list-subheader  color="green-darken-3">
+              <h2 class="font-weight-medium">
+                WANOTO OTASHIRO
+              </h2>
             </v-list-subheader>
 
-            <v-list-item
+            <v-list-item 
               v-for="(item, i) in navigationData.items"
               :key="i"
+              v-on:click="alerting(i)"
             >
 
               <v-list-item-title v-text="item.text"></v-list-item-title>
@@ -31,6 +34,7 @@
 <script>
   export default {
     data: () => ({ 
+      currentState: 0,
       drawer: null,
       navigationData : {
         selectedIndex :1,
@@ -41,6 +45,12 @@
         ]
       },
      }),
+     methods:{
+      alerting(i){
+        alert("aaa" + i);
+        this.currentState = i;
+      }
+     }
   }
 
 </script>
