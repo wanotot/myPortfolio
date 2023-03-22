@@ -1,11 +1,11 @@
 <template>
-    <h1>
+    <h1 color="#8BC34A">
         Profile
     </h1>
 </template>
 
 <script>
 export default {
-    
+
 }
 </script>
