@@ -1,5 +1,5 @@
 <template>
-    <h1 color="#8BC34A">
+    <h1>
         Profile
     </h1>
 </template>
