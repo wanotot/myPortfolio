@@ -6,36 +6,23 @@
                     <v-img :src="card.src" height="200px" cover></v-img>
 
                     <v-card-actions>
-
-                        <v-card-text class="text-h6">{{ card.title }}</v-card-text>
-
-                        <v-btn color="primary" @click="$event => currentIndex = 2">
-                            Open Dialog
-
-                            <v-dialog v-model="isDialogOpen" activator="parent">
+                        <v-btn color="primary" @click="$event => currentIndex = i">
+                            {{ card.title }}
+                            <v-dialog v-model="isDialogOpen" :max-width="500" activator="parent">
                                 <v-card>
+
+                                    <v-img :src="cards[currentIndex].src" :class="h-50"></v-img>
+                                    
                                     <v-card-text>
                                         {{ cards[currentIndex].text }}
                                     </v-card-text>
                                     <v-card-actions>
-                                        <v-btn color="primary" block @click="isDialogOpen = false">Close Dialog</v-btn>
+                                        <v-btn color="primary" block @click="isDialogOpen = false">Close</v-btn>
                                     </v-card-actions>
                                 </v-card>
                             </v-dialog>
                         </v-btn>
-
-                        <v-btn :icon="card.show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-                            @click="card.show = !card.show"></v-btn>
-
                     </v-card-actions>
-
-                    <v-expand-transition>
-                        <div v-show="card.show">
-
-                            <v-card-text>{{ card.text }}</v-card-text>
-
-                        </div>
-                    </v-expand-transition>
                 </v-card>
             </v-col>
         </v-row>
