@@ -8,7 +8,7 @@
                     <v-card-actions>
                         <v-btn color="primary" @click="$event => currentIndex = i">
                             {{ card.title }}
-                            <v-dialog v-model="isDialogOpen" :max-width="500" activator="parent">
+                            <v-dialog v-model="isDialogOpen" activator="parent">
                                 <v-card>
 
                                     <v-img :src="cards[currentIndex].src" :class="h-50"></v-img>
